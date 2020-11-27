@@ -1,0 +1,30 @@
+---
+
+- name: This sets up an file and folder
+  hosts: all
+  become: yes
+  become_method: sudo
+
+  tasks:
+
+    - name: Touch a file, using symbolic modes to set the permissions (equivalent to 0644)
+      file:
+        path: /etc/foo.txt
+        state: touch
+        mode: u=rw,g=r,o=r
+
+    - name: Create a directory if it does not exist
+      file:
+        path: /etc/foo
+        state: directory
+        mode: '0755'
+        
+    - name: Remove file (delete file)
+      file:
+        path: /etc/foo.txt
+        state: absent
+
+    - name: Recursively remove directory
+      file:
+        path: /etc/foo
+        state: absent
