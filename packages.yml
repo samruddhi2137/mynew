@@ -1,0 +1,38 @@
+---
+
+- name: This sets up an apache2 webserver
+  hosts: all
+  become: yes
+  become_method: sudo
+
+  tasks:
+
+  - name: Install apache packages
+
+    apt:
+      name: apache2
+      state: present
+
+  - name: ensure httpd is running
+
+    service:
+      name: apache2
+      state: started
+
+  - name: Install latest version of "openjdk-8jdk" ignoring "install-recommends"
+    
+    apt:
+      name: openjdk-8-jdk
+      state: latest
+      install_recommends: no
+
+  - name: Upgrade all packages to the latest version
+    
+    apt:
+      name: "*"
+      state: latest
+
+  - name: Update all packages to the latest version
+    
+    apt:
+      upgrade: dist
