@@ -1,2 +1,2 @@
 [testServer]
-10.0.5.7 ansible_user=azureuser
+13.93.193.219 ansible_user=azureuser
