@@ -1,4 +1,2 @@
 [testServer]
-10.0.5.7 
-[testServer:vars]
-ansible_password=azureuser
+10.0.5.7 ansible_user=azureuser
