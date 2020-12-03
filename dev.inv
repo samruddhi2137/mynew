@@ -1,2 +1,2 @@
-[testServer]
+[webservers]
 52.184.31.20 ansible_user=azureuser
