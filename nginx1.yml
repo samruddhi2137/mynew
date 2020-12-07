@@ -1,6 +1,6 @@
 ---
 - name: Install nginx
-  hosts: webserver
+  hosts: webservers
   become: true
 
   tasks:
