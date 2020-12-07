@@ -34,7 +34,7 @@
       state: directory
       mode: 0755
 
-  - name: download & unarchive
+  - name: download & unzip
     unarchive:
       src: https://mirrors.estointernet.in/apache/tomcat/tomcat-9/v9.0.40/bin/apache-tomcat-9.0.40.zip
       dest: /opt/tomcat
