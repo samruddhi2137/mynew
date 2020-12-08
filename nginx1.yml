@@ -1,31 +1,9 @@
 ---
-
-- hosts: AppServer
-
-  become: yes
-
+- hosts: webserver
   tasks:
-
-  - name: Installs nginx web server
-
-    apt:
-
-      name: nginx
-
-      state: present
-
-      update_cache: true
-
-    notify:
-
-    - start nginx
-
-  handlers:
-
-  - name: start nginx
-
-    service:
-
-      name: nginx
-
-      state: present
+    - name: ensure nginx is at the latest version
+      apt: name=nginx state=latest
+    - name: start nginx
+      service:
+          name: nginx
+          state: started
