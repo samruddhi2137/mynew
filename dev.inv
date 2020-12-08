@@ -1,6 +1,6 @@
-[nginxservers]
+[webservers]
 13.75.105.84 ansible_user=azureuser
 
-[tomcatservers]
+[webservers]
 168.61.219.179 ansible_user=azureuser
 
