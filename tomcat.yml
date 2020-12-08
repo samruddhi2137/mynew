@@ -1,5 +1,5 @@
 ---
-- hosts: webservers
+- hosts: tomcatservers
 
   become: yes
   become_method: sudo
