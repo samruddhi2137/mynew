@@ -1,5 +1,6 @@
 ---
-- hosts: tomcatservers
+- hosts: 
+     webservers: 168.61.219.179
 
   become: yes
   become_method: sudo
