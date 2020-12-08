@@ -1,0 +1,2 @@
+[webservers]
+13.88.220.219 ansible_user=azureuser
