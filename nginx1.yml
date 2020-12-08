@@ -1,6 +1,5 @@
 ---
-- hosts: 
-   nginxservers: 13.88.220.219
+- hosts: 13.88.220.219
   tasks:
     - name: ensure nginx is at the latest version
       apt: name=nginx state=latest
