@@ -1,20 +1,11 @@
 ---
-- name: Install nginx
-  hosts: webservers
-  become: true
-
+- hosts: webservers
   tasks:
-  - name: Add epel-release repo
-    apt:
-      name: epel-release
-      state: present
+    - name: Installs nginx web server
+      apt: pkg=nginx state=installed update_cache=true
+      notify:
+        - start nginx
 
-  - name: Install nginx
-    apt:
-      name: nginx
-      state: present
-
-  - name: Start NGiNX
-    service:
-      name: nginx
-      state: started
+  handlers:
+    - name: start nginx
+      service: name=nginx state=started
