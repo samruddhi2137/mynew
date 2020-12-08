@@ -1,6 +1,5 @@
 ---
-- hosts: 
-     webservers: 168.61.219.179
+- hosts: webservers
 
   become: yes
   become_method: sudo
