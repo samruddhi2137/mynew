@@ -1,15 +1,18 @@
 ---
-- hosts: webservers
+- hosts: webservers 
+  become: True
   tasks:
-    - name: ensure nginx is at the latest version
-      apt: name=nginx state=latest
-    - name: start nginx
-     service:   
-          name: nginx
-          state: started
-   - name: Deploy static website
+    - name: Install packages
+      yum:
+        name: "httpd"
+        state: "present"
+    - name: Start Apache server
+      service:
+        name: httpd
+        state: started
+        enabled: True
+    - name: Deploy static website
       copy:
         src: index.html
         dest: /var/www/html/
-     
        
