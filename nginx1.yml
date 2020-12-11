@@ -10,6 +10,6 @@
         src: index.html
         dest: /var/www/html/
      
-     service:
+    - service:   
           name: nginx
           state: started
